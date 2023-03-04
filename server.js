@@ -7,7 +7,7 @@ const formatMessage=require('./utils/messages')
 const app=express();
 const server=http.createServer(app);
 const io=socketio(server);
-const botName='signal bot'
+const botName='family bot'
 app.use(express.static(path.join(__dirname, 'public')));
 const landingFile=path.join(__dirname,'/public/index.html');
 app.get('/', function(req, res) {
@@ -25,7 +25,7 @@ io.on('connection',socket=>{
      
      
              //welcome current user
-             socket.emit('message',formatMessage(botName,`${username} welcome to signal`));
+             socket.emit('message',formatMessage(botName,`${username} welcome to family`));
      
              
              //when user connectes
